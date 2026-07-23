@@ -1,0 +1,933 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Flex Example</title>
+		<style>
+			html {
+				font-size: 20px;
+			}
+
+			.pokemon-cards {
+				font-family: monospace;
+			}
+
+			.pokemon-card {
+				border: 2px solid black;
+				border-radius: 10px;
+				width: 300px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<!-- Created based on https://pokemondb.net/pokedex/game/red-blue-yellow -->
+		<div class="pokemon-cards">
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#001</small></span>
+				<img class="pokemon-img" src="assets/images/bulbasaur.png" alt="Bulbasaur" loading="lazy" />
+				<span class="pokemon-name">Bulbasaur</span>
+				<span class="pokemon-type"><small>Grass · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#002</small></span>
+				<img class="pokemon-img" src="assets/images/ivysaur.png" alt="Ivysaur" loading="lazy" />
+				<span class="pokemon-name">Ivysaur</span>
+				<span class="pokemon-type"><small>Grass · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#003</small></span>
+				<img class="pokemon-img" src="assets/images/venusaur.png" alt="Venusaur" loading="lazy" />
+				<span class="pokemon-name">Venusaur</span>
+				<span class="pokemon-type"><small>Grass · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#004</small></span>
+				<img class="pokemon-img" src="assets/images/charmander.png" alt="Charmander" loading="lazy" />
+				<span class="pokemon-name">Charmander</span>
+				<span class="pokemon-type"><small>Fire</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#005</small></span>
+				<img class="pokemon-img" src="assets/images/charmeleon.png" alt="Charmeleon" loading="lazy" />
+				<span class="pokemon-name">Charmeleon</span>
+				<span class="pokemon-type"><small>Fire</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#006</small></span>
+				<img class="pokemon-img" src="assets/images/charizard.png" alt="Charizard" loading="lazy" />
+				<span class="pokemon-name">Charizard</span>
+				<span class="pokemon-type"><small>Fire · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#007</small></span>
+				<img class="pokemon-img" src="assets/images/squirtle.png" alt="Squirtle" loading="lazy" />
+				<span class="pokemon-name">Squirtle</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#008</small></span>
+				<img class="pokemon-img" src="assets/images/wartortle.png" alt="Wartortle" loading="lazy" />
+				<span class="pokemon-name">Wartortle</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#009</small></span>
+				<img class="pokemon-img" src="assets/images/blastoise.png" alt="Blastoise" loading="lazy" />
+				<span class="pokemon-name">Blastoise</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#010</small></span>
+				<img class="pokemon-img" src="assets/images/caterpie.png" alt="Caterpie" loading="lazy" />
+				<span class="pokemon-name">Caterpie</span>
+				<span class="pokemon-type"><small>Bug</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#011</small></span>
+				<img class="pokemon-img" src="assets/images/metapod.png" alt="Metapod" loading="lazy" />
+				<span class="pokemon-name">Metapod</span>
+				<span class="pokemon-type"><small>Bug</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#012</small></span>
+				<img class="pokemon-img" src="assets/images/butterfree.png" alt="Butterfree" loading="lazy" />
+				<span class="pokemon-name">Butterfree</span>
+				<span class="pokemon-type"><small>Bug · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#013</small></span>
+				<img class="pokemon-img" src="assets/images/weedle.png" alt="Weedle" loading="lazy" />
+				<span class="pokemon-name">Weedle</span>
+				<span class="pokemon-type"><small>Bug · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#014</small></span>
+				<img class="pokemon-img" src="assets/images/kakuna.png" alt="Kakuna" loading="lazy" />
+				<span class="pokemon-name">Kakuna</span>
+				<span class="pokemon-type"><small>Bug · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#015</small></span>
+				<img class="pokemon-img" src="assets/images/beedrill.png" alt="Beedrill" loading="lazy" />
+				<span class="pokemon-name">Beedrill</span>
+				<span class="pokemon-type"><small>Bug · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#016</small></span>
+				<img class="pokemon-img" src="assets/images/pidgey.png" alt="Pidgey" loading="lazy" />
+				<span class="pokemon-name">Pidgey</span>
+				<span class="pokemon-type"><small>Normal · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#017</small></span>
+				<img class="pokemon-img" src="assets/images/pidgeotto.png" alt="Pidgeotto" loading="lazy" />
+				<span class="pokemon-name">Pidgeotto</span>
+				<span class="pokemon-type"><small>Normal · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#018</small></span>
+				<img class="pokemon-img" src="assets/images/pidgeot.png" alt="Pidgeot" loading="lazy" />
+				<span class="pokemon-name">Pidgeot</span>
+				<span class="pokemon-type"><small>Normal · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#019</small></span>
+				<img class="pokemon-img" src="assets/images/rattata.png" alt="Rattata" loading="lazy" />
+				<span class="pokemon-name">Rattata</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#020</small></span>
+				<img class="pokemon-img" src="assets/images/raticate.png" alt="Raticate" loading="lazy" />
+				<span class="pokemon-name">Raticate</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#021</small></span>
+				<img class="pokemon-img" src="assets/images/spearow.png" alt="Spearow" loading="lazy" />
+				<span class="pokemon-name">Spearow</span>
+				<span class="pokemon-type"><small>Normal · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#022</small></span>
+				<img class="pokemon-img" src="assets/images/fearow.png" alt="Fearow" loading="lazy" />
+				<span class="pokemon-name">Fearow</span>
+				<span class="pokemon-type"><small>Normal · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#023</small></span>
+				<img class="pokemon-img" src="assets/images/ekans.png" alt="Ekans" loading="lazy" />
+				<span class="pokemon-name">Ekans</span>
+				<span class="pokemon-type"><small>Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#024</small></span>
+				<img class="pokemon-img" src="assets/images/arbok.png" alt="Arbok" loading="lazy" />
+				<span class="pokemon-name">Arbok</span>
+				<span class="pokemon-type"><small>Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#025</small></span>
+				<img class="pokemon-img" src="assets/images/pikachu.png" alt="Pikachu" loading="lazy" />
+				<span class="pokemon-name">Pikachu</span>
+				<span class="pokemon-type"><small>Electric</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#026</small></span>
+				<img class="pokemon-img" src="assets/images/raichu.png" alt="Raichu" loading="lazy" />
+				<span class="pokemon-name">Raichu</span>
+				<span class="pokemon-type"><small>Electric</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#027</small></span>
+				<img class="pokemon-img" src="assets/images/sandshrew.png" alt="Sandshrew" loading="lazy" />
+				<span class="pokemon-name">Sandshrew</span>
+				<span class="pokemon-type"><small>Ground</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#028</small></span>
+				<img class="pokemon-img" src="assets/images/sandslash.png" alt="Sandslash" loading="lazy" />
+				<span class="pokemon-name">Sandslash</span>
+				<span class="pokemon-type"><small>Ground</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#029</small></span>
+				<img class="pokemon-img" src="assets/images/nidoran-f.png" alt="Nidoran♀" loading="lazy" />
+				<span class="pokemon-name">">Nidoran♀</span>
+				<span class="pokemon-type"><small>Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#030</small></span>
+				<img class="pokemon-img" src="assets/images/nidorina.png" alt="Nidorina" loading="lazy" />
+				<span class="pokemon-name">Nidorina</span>
+				<span class="pokemon-type"><small>Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#031</small></span>
+				<img class="pokemon-img" src="assets/images/nidoqueen.png" alt="Nidoqueen" loading="lazy" />
+				<span class="pokemon-name">Nidoqueen</span>
+				<span class="pokemon-type"><small>Poison · Ground</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#032</small></span>
+				<img class="pokemon-img" src="assets/images/nidoran-m.png" alt="Nidoran♂" loading="lazy" />
+				<span class="pokemon-name">">Nidoran♂</span>
+				<span class="pokemon-type"><small>Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#033</small></span>
+				<img class="pokemon-img" src="assets/images/nidorino.png" alt="Nidorino" loading="lazy" />
+				<span class="pokemon-name">Nidorino</span>
+				<span class="pokemon-type"><small>Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#034</small></span>
+				<img class="pokemon-img" src="assets/images/nidoking.png" alt="Nidoking" loading="lazy" />
+				<span class="pokemon-name">Nidoking</span>
+				<span class="pokemon-type"><small>Poison · Ground</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#035</small></span>
+				<img class="pokemon-img" src="assets/images/clefairy.png" alt="Clefairy" loading="lazy" />
+				<span class="pokemon-name">Clefairy</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#036</small></span>
+				<img class="pokemon-img" src="assets/images/clefable.png" alt="Clefable" loading="lazy" />
+				<span class="pokemon-name">Clefable</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#037</small></span>
+				<img class="pokemon-img" src="assets/images/vulpix.png" alt="Vulpix" loading="lazy" />
+				<span class="pokemon-name">Vulpix</span>
+				<span class="pokemon-type"><small>Fire</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#038</small></span>
+				<img class="pokemon-img" src="assets/images/ninetales.png" alt="Ninetales" loading="lazy" />
+				<span class="pokemon-name">Ninetales</span>
+				<span class="pokemon-type"><small>Fire</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#039</small></span>
+				<img class="pokemon-img" src="assets/images/jigglypuff.png" alt="Jigglypuff" loading="lazy" />
+				<span class="pokemon-name">Jigglypuff</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#040</small></span>
+				<img class="pokemon-img" src="assets/images/wigglytuff.png" alt="Wigglytuff" loading="lazy" />
+				<span class="pokemon-name">Wigglytuff</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#041</small></span>
+				<img class="pokemon-img" src="assets/images/zubat.png" alt="Zubat" loading="lazy" />
+				<span class="pokemon-name">Zubat</span>
+				<span class="pokemon-type"><small>Poison · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#042</small></span>
+				<img class="pokemon-img" src="assets/images/golbat.png" alt="Golbat" loading="lazy" />
+				<span class="pokemon-name">Golbat</span>
+				<span class="pokemon-type"><small>Poison · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#043</small></span>
+				<img class="pokemon-img" src="assets/images/oddish.png" alt="Oddish" loading="lazy" />
+				<span class="pokemon-name">Oddish</span>
+				<span class="pokemon-type"><small>Grass · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#044</small></span>
+				<img class="pokemon-img" src="assets/images/gloom.png" alt="Gloom" loading="lazy" />
+				<span class="pokemon-name">Gloom</span>
+				<span class="pokemon-type"><small>Grass · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#045</small></span>
+				<img class="pokemon-img" src="assets/images/vileplume.png" alt="Vileplume" loading="lazy" />
+				<span class="pokemon-name">Vileplume</span>
+				<span class="pokemon-type"><small>Grass · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#046</small></span>
+				<img class="pokemon-img" src="assets/images/paras.png" alt="Paras" loading="lazy" />
+				<span class="pokemon-name">Paras</span>
+				<span class="pokemon-type"><small>Bug · Grass</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#047</small></span>
+				<img class="pokemon-img" src="assets/images/parasect.png" alt="Parasect" loading="lazy" />
+				<span class="pokemon-name">Parasect</span>
+				<span class="pokemon-type"><small>Bug · Grass</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#048</small></span>
+				<img class="pokemon-img" src="assets/images/venonat.png" alt="Venonat" loading="lazy" />
+				<span class="pokemon-name">Venonat</span>
+				<span class="pokemon-type"><small>Bug · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#049</small></span>
+				<img class="pokemon-img" src="assets/images/venomoth.png" alt="Venomoth" loading="lazy" />
+				<span class="pokemon-name">Venomoth</span>
+				<span class="pokemon-type"><small>Bug · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#050</small></span>
+				<img class="pokemon-img" src="assets/images/diglett.png" alt="Diglett" loading="lazy" />
+				<span class="pokemon-name">Diglett</span>
+				<span class="pokemon-type"><small>Ground</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#051</small></span>
+				<img class="pokemon-img" src="assets/images/dugtrio.png" alt="Dugtrio" loading="lazy" />
+				<span class="pokemon-name">Dugtrio</span>
+				<span class="pokemon-type"><small>Ground</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#052</small></span>
+				<img class="pokemon-img" src="assets/images/meowth.png" alt="Meowth" loading="lazy" />
+				<span class="pokemon-name">Meowth</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#053</small></span>
+				<img class="pokemon-img" src="assets/images/persian.png" alt="Persian" loading="lazy" />
+				<span class="pokemon-name">Persian</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#054</small></span>
+				<img class="pokemon-img" src="assets/images/psyduck.png" alt="Psyduck" loading="lazy" />
+				<span class="pokemon-name">Psyduck</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#055</small></span>
+				<img class="pokemon-img" src="assets/images/golduck.png" alt="Golduck" loading="lazy" />
+				<span class="pokemon-name">Golduck</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#056</small></span>
+				<img class="pokemon-img" src="assets/images/mankey.png" alt="Mankey" loading="lazy" />
+				<span class="pokemon-name">Mankey</span>
+				<span class="pokemon-type"><small>Fighting</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#057</small></span>
+				<img class="pokemon-img" src="assets/images/primeape.png" alt="Primeape" loading="lazy" />
+				<span class="pokemon-name">Primeape</span>
+				<span class="pokemon-type"><small>Fighting</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#058</small></span>
+				<img class="pokemon-img" src="assets/images/growlithe.png" alt="Growlithe" loading="lazy" />
+				<span class="pokemon-name">Growlithe</span>
+				<span class="pokemon-type"><small>Fire</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#059</small></span>
+				<img class="pokemon-img" src="assets/images/arcanine.png" alt="Arcanine" loading="lazy" />
+				<span class="pokemon-name">Arcanine</span>
+				<span class="pokemon-type"><small>Fire</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#060</small></span>
+				<img class="pokemon-img" src="assets/images/poliwag.png" alt="Poliwag" loading="lazy" />
+				<span class="pokemon-name">Poliwag</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#061</small></span>
+				<img class="pokemon-img" src="assets/images/poliwhirl.png" alt="Poliwhirl" loading="lazy" />
+				<span class="pokemon-name">Poliwhirl</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#062</small></span>
+				<img class="pokemon-img" src="assets/images/poliwrath.png" alt="Poliwrath" loading="lazy" />
+				<span class="pokemon-name">Poliwrath</span>
+				<span class="pokemon-type"><small>Water · Fighting</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#063</small></span>
+				<img class="pokemon-img" src="assets/images/abra.png" alt="Abra" loading="lazy" />
+				<span class="pokemon-name">Abra</span>
+				<span class="pokemon-type"><small>Psychic</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#064</small></span>
+				<img class="pokemon-img" src="assets/images/kadabra.png" alt="Kadabra" loading="lazy" />
+				<span class="pokemon-name">Kadabra</span>
+				<span class="pokemon-type"><small>Psychic</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#065</small></span>
+				<img class="pokemon-img" src="assets/images/alakazam.png" alt="Alakazam" loading="lazy" />
+				<span class="pokemon-name">Alakazam</span>
+				<span class="pokemon-type"><small>Psychic</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#066</small></span>
+				<img class="pokemon-img" src="assets/images/machop.png" alt="Machop" loading="lazy" />
+				<span class="pokemon-name">Machop</span>
+				<span class="pokemon-type"><small>Fighting</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#067</small></span>
+				<img class="pokemon-img" src="assets/images/machoke.png" alt="Machoke" loading="lazy" />
+				<span class="pokemon-name">Machoke</span>
+				<span class="pokemon-type"><small>Fighting</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#068</small></span>
+				<img class="pokemon-img" src="assets/images/machamp.png" alt="Machamp" loading="lazy" />
+				<span class="pokemon-name">Machamp</span>
+				<span class="pokemon-type"><small>Fighting</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#069</small></span>
+				<img class="pokemon-img" src="assets/images/bellsprout.png" alt="Bellsprout" loading="lazy" />
+				<span class="pokemon-name">Bellsprout</span>
+				<span class="pokemon-type"><small>Grass · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#070</small></span>
+				<img class="pokemon-img" src="assets/images/weepinbell.png" alt="Weepinbell" loading="lazy" />
+				<span class="pokemon-name">Weepinbell</span>
+				<span class="pokemon-type"><small>Grass · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#071</small></span>
+				<img class="pokemon-img" src="assets/images/victreebel.png" alt="Victreebel" loading="lazy" />
+				<span class="pokemon-name">Victreebel</span>
+				<span class="pokemon-type"><small>Grass · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#072</small></span>
+				<img class="pokemon-img" src="assets/images/tentacool.png" alt="Tentacool" loading="lazy" />
+				<span class="pokemon-name">Tentacool</span>
+				<span class="pokemon-type"><small>Water · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#073</small></span>
+				<img class="pokemon-img" src="assets/images/tentacruel.png" alt="Tentacruel" loading="lazy" />
+				<span class="pokemon-name">Tentacruel</span>
+				<span class="pokemon-type"><small>Water · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#074</small></span>
+				<img class="pokemon-img" src="assets/images/geodude.png" alt="Geodude" loading="lazy" />
+				<span class="pokemon-name">Geodude</span>
+				<span class="pokemon-type"><small>Rock · Ground</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#075</small></span>
+				<img class="pokemon-img" src="assets/images/graveler.png" alt="Graveler" loading="lazy" />
+				<span class="pokemon-name">Graveler</span>
+				<span class="pokemon-type"><small>Rock · Ground</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#076</small></span>
+				<img class="pokemon-img" src="assets/images/golem.png" alt="Golem" loading="lazy" />
+				<span class="pokemon-name">Golem</span>
+				<span class="pokemon-type"><small>Rock · Ground</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#077</small></span>
+				<img class="pokemon-img" src="assets/images/ponyta.png" alt="Ponyta" loading="lazy" />
+				<span class="pokemon-name">Ponyta</span>
+				<span class="pokemon-type"><small>Fire</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#078</small></span>
+				<img class="pokemon-img" src="assets/images/rapidash.png" alt="Rapidash" loading="lazy" />
+				<span class="pokemon-name">Rapidash</span>
+				<span class="pokemon-type"><small>Fire</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#079</small></span>
+				<img class="pokemon-img" src="assets/images/slowpoke.png" alt="Slowpoke" loading="lazy" />
+				<span class="pokemon-name">Slowpoke</span>
+				<span class="pokemon-type"><small>Water · Psychic</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#080</small></span>
+				<img class="pokemon-img" src="assets/images/slowbro.png" alt="Slowbro" loading="lazy" />
+				<span class="pokemon-name">Slowbro</span>
+				<span class="pokemon-type"><small>Water · Psychic</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#081</small></span>
+				<img class="pokemon-img" src="assets/images/magnemite.png" alt="Magnemite" loading="lazy" />
+				<span class="pokemon-name">Magnemite</span>
+				<span class="pokemon-type"><small>Electric</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#082</small></span>
+				<img class="pokemon-img" src="assets/images/magneton.png" alt="Magneton" loading="lazy" />
+				<span class="pokemon-name">Magneton</span>
+				<span class="pokemon-type"><small>Electric</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#083</small></span>
+				<img class="pokemon-img" src="assets/images/farfetchd.png" alt="Farfetch&#39;d" loading="lazy" />
+				<span class="pokemon-name">Farfetch'd</span>
+				<span class="pokemon-type"><small>Normal · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#084</small></span>
+				<img class="pokemon-img" src="assets/images/doduo.png" alt="Doduo" loading="lazy" />
+				<span class="pokemon-name">Doduo</span>
+				<span class="pokemon-type"><small>Normal · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#085</small></span>
+				<img class="pokemon-img" src="assets/images/dodrio.png" alt="Dodrio" loading="lazy" />
+				<span class="pokemon-name">Dodrio</span>
+				<span class="pokemon-type"><small>Normal · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#086</small></span>
+				<img class="pokemon-img" src="assets/images/seel.png" alt="Seel" loading="lazy" />
+				<span class="pokemon-name">Seel</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#087</small></span>
+				<img class="pokemon-img" src="assets/images/dewgong.png" alt="Dewgong" loading="lazy" />
+				<span class="pokemon-name">Dewgong</span>
+				<span class="pokemon-type"><small>Water · Ice</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#088</small></span>
+				<img class="pokemon-img" src="assets/images/grimer.png" alt="Grimer" loading="lazy" />
+				<span class="pokemon-name">Grimer</span>
+				<span class="pokemon-type"><small>Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#089</small></span>
+				<img class="pokemon-img" src="assets/images/muk.png" alt="Muk" loading="lazy" />
+				<span class="pokemon-name">Muk</span>
+				<span class="pokemon-type"><small>Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#090</small></span>
+				<img class="pokemon-img" src="assets/images/shellder.png" alt="Shellder" loading="lazy" />
+				<span class="pokemon-name">Shellder</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#091</small></span>
+				<img class="pokemon-img" src="assets/images/cloyster.png" alt="Cloyster" loading="lazy" />
+				<span class="pokemon-name">Cloyster</span>
+				<span class="pokemon-type"><small>Water · Ice</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#092</small></span>
+				<img class="pokemon-img" src="assets/images/gastly.png" alt="Gastly" loading="lazy" />
+				<span class="pokemon-name">Gastly</span>
+				<span class="pokemon-type"><small>Ghost · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#093</small></span>
+				<img class="pokemon-img" src="assets/images/haunter.png" alt="Haunter" loading="lazy" />
+				<span class="pokemon-name">Haunter</span>
+				<span class="pokemon-type"><small>Ghost · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#094</small></span>
+				<img class="pokemon-img" src="assets/images/gengar.png" alt="Gengar" loading="lazy" />
+				<span class="pokemon-name">Gengar</span>
+				<span class="pokemon-type"><small>Ghost · Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#095</small></span>
+				<img class="pokemon-img" src="assets/images/onix.png" alt="Onix" loading="lazy" />
+				<span class="pokemon-name">Onix</span>
+				<span class="pokemon-type"><small>Rock · Ground</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#096</small></span>
+				<img class="pokemon-img" src="assets/images/drowzee.png" alt="Drowzee" loading="lazy" />
+				<span class="pokemon-name">Drowzee</span>
+				<span class="pokemon-type"><small>Psychic</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#097</small></span>
+				<img class="pokemon-img" src="assets/images/hypno.png" alt="Hypno" loading="lazy" />
+				<span class="pokemon-name">Hypno</span>
+				<span class="pokemon-type"><small>Psychic</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#098</small></span>
+				<img class="pokemon-img" src="assets/images/krabby.png" alt="Krabby" loading="lazy" />
+				<span class="pokemon-name">Krabby</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#099</small></span>
+				<img class="pokemon-img" src="assets/images/kingler.png" alt="Kingler" loading="lazy" />
+				<span class="pokemon-name">Kingler</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#100</small></span>
+				<img class="pokemon-img" src="assets/images/voltorb.png" alt="Voltorb" loading="lazy" />
+				<span class="pokemon-name">Voltorb</span>
+				<span class="pokemon-type"><small>Electric</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#101</small></span>
+				<img class="pokemon-img" src="assets/images/electrode.png" alt="Electrode" loading="lazy" />
+				<span class="pokemon-name">Electrode</span>
+				<span class="pokemon-type"><small>Electric</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#102</small></span>
+				<img class="pokemon-img" src="assets/images/exeggcute.png" alt="Exeggcute" loading="lazy" />
+				<span class="pokemon-name">Exeggcute</span>
+				<span class="pokemon-type"><small>Grass · Psychic</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#103</small></span>
+				<img class="pokemon-img" src="assets/images/exeggutor.png" alt="Exeggutor" loading="lazy" />
+				<span class="pokemon-name">Exeggutor</span>
+				<span class="pokemon-type"><small>Grass · Psychic</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#104</small></span>
+				<img class="pokemon-img" src="assets/images/cubone.png" alt="Cubone" loading="lazy" />
+				<span class="pokemon-name">Cubone</span>
+				<span class="pokemon-type"><small>Ground</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#105</small></span>
+				<img class="pokemon-img" src="assets/images/marowak.png" alt="Marowak" loading="lazy" />
+				<span class="pokemon-name">Marowak</span>
+				<span class="pokemon-type"><small>Ground</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#106</small></span>
+				<img class="pokemon-img" src="assets/images/hitmonlee.png" alt="Hitmonlee" loading="lazy" />
+				<span class="pokemon-name">Hitmonlee</span>
+				<span class="pokemon-type"><small>Fighting</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#107</small></span>
+				<img class="pokemon-img" src="assets/images/hitmonchan.png" alt="Hitmonchan" loading="lazy" />
+				<span class="pokemon-name">Hitmonchan</span>
+				<span class="pokemon-type"><small>Fighting</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#108</small></span>
+				<img class="pokemon-img" src="assets/images/lickitung.png" alt="Lickitung" loading="lazy" />
+				<span class="pokemon-name">Lickitung</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#109</small></span>
+				<img class="pokemon-img" src="assets/images/koffing.png" alt="Koffing" loading="lazy" />
+				<span class="pokemon-name">Koffing</span>
+				<span class="pokemon-type"><small>Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#110</small></span>
+				<img class="pokemon-img" src="assets/images/weezing.png" alt="Weezing" loading="lazy" />
+				<span class="pokemon-name">Weezing</span>
+				<span class="pokemon-type"><small>Poison</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#111</small></span>
+				<img class="pokemon-img" src="assets/images/rhyhorn.png" alt="Rhyhorn" loading="lazy" />
+				<span class="pokemon-name">Rhyhorn</span>
+				<span class="pokemon-type"><small>Ground · Rock</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#112</small></span>
+				<img class="pokemon-img" src="assets/images/rhydon.png" alt="Rhydon" loading="lazy" />
+				<span class="pokemon-name">Rhydon</span>
+				<span class="pokemon-type"><small>Ground · Rock</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#113</small></span>
+				<img class="pokemon-img" src="assets/images/chansey.png" alt="Chansey" loading="lazy" />
+				<span class="pokemon-name">Chansey</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#114</small></span>
+				<img class="pokemon-img" src="assets/images/tangela.png" alt="Tangela" loading="lazy" />
+				<span class="pokemon-name">Tangela</span>
+				<span class="pokemon-type"><small>Grass</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#115</small></span>
+				<img class="pokemon-img" src="assets/images/kangaskhan.png" alt="Kangaskhan" loading="lazy" />
+				<span class="pokemon-name">Kangaskhan</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#116</small></span>
+				<img class="pokemon-img" src="assets/images/horsea.png" alt="Horsea" loading="lazy" />
+				<span class="pokemon-name">Horsea</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#117</small></span>
+				<img class="pokemon-img" src="assets/images/seadra.png" alt="Seadra" loading="lazy" />
+				<span class="pokemon-name">Seadra</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#118</small></span>
+				<img class="pokemon-img" src="assets/images/goldeen.png" alt="Goldeen" loading="lazy" />
+				<span class="pokemon-name">Goldeen</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#119</small></span>
+				<img class="pokemon-img" src="assets/images/seaking.png" alt="Seaking" loading="lazy" />
+				<span class="pokemon-name">Seaking</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#120</small></span>
+				<img class="pokemon-img" src="assets/images/staryu.png" alt="Staryu" loading="lazy" />
+				<span class="pokemon-name">Staryu</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#121</small></span>
+				<img class="pokemon-img" src="assets/images/starmie.png" alt="Starmie" loading="lazy" />
+				<span class="pokemon-name">Starmie</span>
+				<span class="pokemon-type"><small>Water · Psychic</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#122</small></span>
+				<img class="pokemon-img" src="assets/images/mr-mime.png" alt="Mr. Mime" loading="lazy" />
+				<span class="pokemon-name">">Mr. Mime</span>
+				<span class="pokemon-type"><small>Psychic</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#123</small></span>
+				<img class="pokemon-img" src="assets/images/scyther.png" alt="Scyther" loading="lazy" />
+				<span class="pokemon-name">Scyther</span>
+				<span class="pokemon-type"><small>Bug · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#124</small></span>
+				<img class="pokemon-img" src="assets/images/jynx.png" alt="Jynx" loading="lazy" />
+				<span class="pokemon-name">Jynx</span>
+				<span class="pokemon-type"><small>Ice · Psychic</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#125</small></span>
+				<img class="pokemon-img" src="assets/images/electabuzz.png" alt="Electabuzz" loading="lazy" />
+				<span class="pokemon-name">Electabuzz</span>
+				<span class="pokemon-type"><small>Electric</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#126</small></span>
+				<img class="pokemon-img" src="assets/images/magmar.png" alt="Magmar" loading="lazy" />
+				<span class="pokemon-name">Magmar</span>
+				<span class="pokemon-type"><small>Fire</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#127</small></span>
+				<img class="pokemon-img" src="assets/images/pinsir.png" alt="Pinsir" loading="lazy" />
+				<span class="pokemon-name">Pinsir</span>
+				<span class="pokemon-type"><small>Bug</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#128</small></span>
+				<img class="pokemon-img" src="assets/images/tauros.png" alt="Tauros" loading="lazy" />
+				<span class="pokemon-name">Tauros</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#129</small></span>
+				<img class="pokemon-img" src="assets/images/magikarp.png" alt="Magikarp" loading="lazy" />
+				<span class="pokemon-name">Magikarp</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#130</small></span>
+				<img class="pokemon-img" src="assets/images/gyarados.png" alt="Gyarados" loading="lazy" />
+				<span class="pokemon-name">Gyarados</span>
+				<span class="pokemon-type"><small>Water · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#131</small></span>
+				<img class="pokemon-img" src="assets/images/lapras.png" alt="Lapras" loading="lazy" />
+				<span class="pokemon-name">Lapras</span>
+				<span class="pokemon-type"><small>Water · Ice</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#132</small></span>
+				<img class="pokemon-img" src="assets/images/ditto.png" alt="Ditto" loading="lazy" />
+				<span class="pokemon-name">Ditto</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#133</small></span>
+				<img class="pokemon-img" src="assets/images/eevee.png" alt="Eevee" loading="lazy" />
+				<span class="pokemon-name">Eevee</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#134</small></span>
+				<img class="pokemon-img" src="assets/images/vaporeon.png" alt="Vaporeon" loading="lazy" />
+				<span class="pokemon-name">Vaporeon</span>
+				<span class="pokemon-type"><small>Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#135</small></span>
+				<img class="pokemon-img" src="assets/images/jolteon.png" alt="Jolteon" loading="lazy" />
+				<span class="pokemon-name">Jolteon</span>
+				<span class="pokemon-type"><small>Electric</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#136</small></span>
+				<img class="pokemon-img" src="assets/images/flareon.png" alt="Flareon" loading="lazy" />
+				<span class="pokemon-name">Flareon</span>
+				<span class="pokemon-type"><small>Fire</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#137</small></span>
+				<img class="pokemon-img" src="assets/images/porygon.png" alt="Porygon" loading="lazy" />
+				<span class="pokemon-name">Porygon</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#138</small></span>
+				<img class="pokemon-img" src="assets/images/omanyte.png" alt="Omanyte" loading="lazy" />
+				<span class="pokemon-name">Omanyte</span>
+				<span class="pokemon-type"><small>Rock · Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#139</small></span>
+				<img class="pokemon-img" src="assets/images/omastar.png" alt="Omastar" loading="lazy" />
+				<span class="pokemon-name">Omastar</span>
+				<span class="pokemon-type"><small>Rock · Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#140</small></span>
+				<img class="pokemon-img" src="assets/images/kabuto.png" alt="Kabuto" loading="lazy" />
+				<span class="pokemon-name">Kabuto</span>
+				<span class="pokemon-type"><small>Rock · Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#141</small></span>
+				<img class="pokemon-img" src="assets/images/kabutops.png" alt="Kabutops" loading="lazy" />
+				<span class="pokemon-name">Kabutops</span>
+				<span class="pokemon-type"><small>Rock · Water</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#142</small></span>
+				<img class="pokemon-img" src="assets/images/aerodactyl.png" alt="Aerodactyl" loading="lazy" />
+				<span class="pokemon-name">Aerodactyl</span>
+				<span class="pokemon-type"><small>Rock · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#143</small></span>
+				<img class="pokemon-img" src="assets/images/snorlax.png" alt="Snorlax" loading="lazy" />
+				<span class="pokemon-name">Snorlax</span>
+				<span class="pokemon-type"><small>Normal</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#144</small></span>
+				<img class="pokemon-img" src="assets/images/articuno.png" alt="Articuno" loading="lazy" />
+				<span class="pokemon-name">Articuno</span>
+				<span class="pokemon-type"><small>Ice · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#145</small></span>
+				<img class="pokemon-img" src="assets/images/zapdos.png" alt="Zapdos" loading="lazy" />
+				<span class="pokemon-name">Zapdos</span>
+				<span class="pokemon-type"><small>Electric · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#146</small></span>
+				<img class="pokemon-img" src="assets/images/moltres.png" alt="Moltres" loading="lazy" />
+				<span class="pokemon-name">Moltres</span>
+				<span class="pokemon-type"><small>Fire · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#147</small></span>
+				<img class="pokemon-img" src="assets/images/dratini.png" alt="Dratini" loading="lazy" />
+				<span class="pokemon-name">Dratini</span>
+				<span class="pokemon-type"><small>Dragon</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#148</small></span>
+				<img class="pokemon-img" src="assets/images/dragonair.png" alt="Dragonair" loading="lazy" />
+				<span class="pokemon-name">Dragonair</span>
+				<span class="pokemon-type"><small>Dragon</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#149</small></span>
+				<img class="pokemon-img" src="assets/images/dragonite.png" alt="Dragonite" loading="lazy" />
+				<span class="pokemon-name">Dragonite</span>
+				<span class="pokemon-type"><small>Dragon · Flying</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#150</small></span>
+				<img class="pokemon-img" src="assets/images/mewtwo.png" alt="Mewtwo" loading="lazy" />
+				<span class="pokemon-name">Mewtwo</span>
+				<span class="pokemon-type"><small>Psychic</small></span>
+			</div>
+			<div class="pokemon-card">
+				<span class="pokemon-num"><small>#151</small></span>
+				<img class="pokemon-img" src="assets/images/mew.png" alt="Mew" loading="lazy" />
+				<span class="pokemon-name">Mew</span>
+				<span class="pokemon-type"><small>Psychic</small></span>
+			</div>
+		</div>
+	</body>
+</html>
